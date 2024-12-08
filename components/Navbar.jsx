@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold text-orange-500">
               Blog Application
             </Link>
           </div>
