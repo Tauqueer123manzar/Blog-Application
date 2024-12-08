@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
 import { useState } from 'react';
+import { Button } from "@/components/ui/button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,13 +18,13 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-orange-500">
+            <Link href="/" className="text-xl font-bold">
               Blog Application
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center justify-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -33,6 +34,10 @@ export default function Header() {
                 {link.text}
               </Link>
             ))}
+          </div>
+          <div className='hidden md:flex items-center space-x-4'>
+              <Button variant="outline">Login</Button>
+              <Button variant="outline">Signup</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,6 +79,10 @@ export default function Header() {
                 {link.text}
               </Link>
             ))}
+            <div className="px-2 py-2 space-y-2">
+              <Button variant="outline" className="mx-1">Login</Button>
+              <Button variant="outline" className="mx-2">Signup</Button>
+            </div>
           </div>
         )}
       </div>
