@@ -10,11 +10,12 @@ export default function Header() {
     { href: "/", text: "Home" },
     { href: "/about", text: "About" },
     { href: "/contact", text: "Contact" },
+    { href:"/blog", text:"Blog"}
   ];
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-6xl mx-auto px-4">
+    <nav className="bg-white shadow-lg bg-background/50 sticky top-0 backdrop-blur border-b">
+      <div className="container max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -68,7 +69,7 @@ export default function Header() {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200">
+          <div className="md:hidden flex flex-col items-center justify-center border-t border-gray-200">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
